@@ -1,0 +1,15 @@
+Terminal
+-create-react-app client
+
+client
+
+
+Open Integrated Terminal
+-npm install axios
+-npm install node
+-npm install react-route-dom
+
+server
+-create a index.js file
+-npm install node
+-npm install mysql express cors
