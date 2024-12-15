@@ -3,13 +3,22 @@ Terminal
 
 client
 
-
 Open Integrated Terminal
 -npm install axios
 -npm install node
 -npm install react-route-dom
 
 server
+
 -create a index.js file
 -npm install node
 -npm install mysql express cors
+
+
+TO RUN THE APP
+
+Open Integrated Terminal in Server
+-npm run dev
+
+Open Integrated Terminal in Client
+-npm start
