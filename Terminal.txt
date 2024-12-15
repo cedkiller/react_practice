@@ -10,6 +10,7 @@ Open Integrated Terminal
 
 server
 
+-create a folder name server
 -create a index.js file
 -npm install node
 -npm install mysql express cors
