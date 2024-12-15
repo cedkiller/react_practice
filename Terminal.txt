@@ -19,7 +19,7 @@ server
 TO RUN THE APP
 
 Open Integrated Terminal in Server
--npm run dev
+-node index.js
 
 Open Integrated Terminal in Client
 -npm start
