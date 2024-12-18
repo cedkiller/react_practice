@@ -1,25 +1,39 @@
-Terminal
--create-react-app client
+TERMINAL
+-npm create vite@latest
 
-client
+CLIENT
 
-Open Integrated Terminal
--npm install axios
--npm install node
--npm install react-route-dom
+OPEN INTEGRATED TERMINAL IN CLIENT
+-npm install axios react-router-dom
 
-server
+COPY THIS AND REPLACE THE CODE IN vite.config.js
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: true, // Optional: for allowing access from the network
+    port: 3000,
+    open: true, // Optional: open the browser automatically
+    historyApiFallback: true,
+  }
+})
+
+
+SERVER
 
 -create a folder name server
 -create a index.js file
--npm install node
--npm install mysql express cors
+-npm install node mysql express cors jsonwebtoken bcrypt nodemon
 
 
 TO RUN THE APP
 
-Open Integrated Terminal in Server
+OPEN INTEGRATED TERMINAL IN SERVER
 -node index.js
 
-Open Integrated Terminal in Client
--npm start
+OPEN INTEGRATED TERMINAL IN CLIENT
+-npm run dev
