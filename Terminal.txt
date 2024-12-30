@@ -22,6 +22,8 @@ export default defineConfig({
   }
 })
 
+AFTER REPLACE THE CODE OPEN INTEGRATED TERMINAL IN CLIENT 
+-npm install @vitejs/plugin-react --save-dev
 
 SERVER
 
