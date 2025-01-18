@@ -4,7 +4,7 @@ TERMINAL
 CLIENT
 
 OPEN INTEGRATED TERMINAL IN CLIENT
--npm install axios react-router-dom
+-npm install axios react-router-dom sweetalert2
 
 COPY THIS AND REPLACE THE CODE IN vite.config.js
 
