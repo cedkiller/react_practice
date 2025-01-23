@@ -22,6 +22,9 @@ app.get('/record', (req, res) => {
             console.error('Error fetching records:', error);
             return res.status(500).json({ message: 'Error fetching records' });
         }
+        if (results.length === 0) {
+            return res.status(401).json({ message: 'Error' });
+        }
         res.json(results);
     });
 });
@@ -29,10 +32,13 @@ app.get('/record', (req, res) => {
 // Add a record
 app.post('/record', (req, res) => {
     const { list } = req.body;
-    pool.query('INSERT INTO list (list_name) VALUES (?)', [list], (error) => {
+    pool.query('INSERT INTO list (list_name) VALUES (?)', [list], (error, results) => {
         if (error) {
             console.error('Error adding record:', error);
             return res.status(500).json({ message: 'Error adding record' });
+        }
+        if (results.length === 0) {
+            return res.status(401).json({ message: 'Error' });
         }
         res.json({ message: 'Record added successfully' });
     });
@@ -41,10 +47,13 @@ app.post('/record', (req, res) => {
 // Edit a record
 app.put('/record', (req, res) => {
     const { list, update } = req.body;
-    pool.query('UPDATE list SET list_name=? WHERE id=?', [list, update], (error) => {
+    pool.query('UPDATE list SET list_name=? WHERE id=?', [list, update], (error, results) => {
         if (error) {
             console.error('Error updating record:', error);
             return res.status(500).json({ message: 'Error updating record' });
+        }
+        if (results.length === 0) {
+            return res.status(401).json({ message: 'Error' });
         }
         res.json({ message: 'Record updated successfully' });
     });
@@ -53,10 +62,13 @@ app.put('/record', (req, res) => {
 // Delete a record
 app.delete('/record', (req, res) => {
     const { id } = req.query; // Extract id from query parameter
-    pool.query('DELETE FROM list WHERE id=?', [id], (error) => {
+    pool.query('DELETE FROM list WHERE id=?', [id], (error, results) => {
         if (error) {
             console.error('Error deleting record:', error);
             return res.status(500).json({ message: 'Error deleting record' });
+        }
+        if (results.length === 0) {
+            return res.status(401).json({ message: 'Error' });
         }
         res.json({ message: 'Record deleted successfully' });
     });
