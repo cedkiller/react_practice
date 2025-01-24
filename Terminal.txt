@@ -31,6 +31,12 @@ SERVER
 -create a index.js file
 -npm install node mysql express cors jsonwebtoken bcrypt nodemon
 
+AFTER INSTALLATION AND SETUP NOW SETUP ALL THE FILES
+
+- changes the main.css
+- copy the app.jsx code in the github
+- create folder name pages
+- inside the folder name pages create Home.jsx
 
 TO RUN THE APP
 
