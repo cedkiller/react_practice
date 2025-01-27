@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 08:42 AM
+-- Generation Time: Jan 27, 2025 at 12:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,76 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `list`
---
-
-CREATE TABLE `list` (
-  `id` int(11) NOT NULL,
-  `list_name` varchar(255) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `list`
---
-
-INSERT INTO `list` (`id`, `list_name`, `date_created`) VALUES
-(5, 'Testing 1', '2024-12-18 07:20:22'),
-(6, 'Testing 2', '2024-12-18 07:20:27');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `record`
 --
 
 CREATE TABLE `record` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `year_level` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `section` varchar(255) NOT NULL,
-  `status` varchar(255) DEFAULT NULL
+  `task` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `record`
 --
 
-INSERT INTO `record` (`id`, `name`, `year_level`, `course`, `section`, `status`) VALUES
-(1001, 'Cedrick Jasper R. Sarabia', '4th', 'CCS', '402', 'Pending'),
-(1002, 'Mercury', '3rd', 'CBAE', '302', 'Pending'),
-(1003, 'Venus', '2nd', 'COA', '203', 'Pending');
+INSERT INTO `record` (`id`, `task`) VALUES
+(28, 'Testing');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sample`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `sample` (
-  `id` int(11) NOT NULL,
-  `user_input` varchar(2000) NOT NULL,
-  `prompt` varchar(2000) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sample`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `sample` (`id`, `user_input`, `prompt`, `date_created`) VALUES
-(1, 'What is the gravity of the earth', '', '2024-09-19 01:50:14');
+INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_type`) VALUES
+(65, 'Cedrick Jasper R. Sarabia', 'cedrickjaspersarabia@gmail.com', '$2y$10$kn85elTDQhLBvJMaxwoIRupppvX.WLohqRtp89cZ7OyVvAT4k1Qhm', 'admin'),
+(66, 'Ramon Raigor Rodriguez', 'ramon091717171@gmail.com', '$2y$10$jQ7dFTxirm2mI6gXmIjgPepzPsD.WUHwqX1CgidwoNjZkJDvtHCzK', 'user');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `list`
---
-ALTER TABLE `list`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `record`
@@ -102,32 +72,26 @@ ALTER TABLE `record`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sample`
+-- Indexes for table `user`
 --
-ALTER TABLE `sample`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `list`
---
-ALTER TABLE `list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `record`
 --
 ALTER TABLE `record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `sample`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `sample`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
