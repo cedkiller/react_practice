@@ -26,7 +26,9 @@ app.get('/get_record', (req, res) => {
         if (results.length === 0) {
             return res.status(401).json({ message: 'Error' });
         }
-        res.json(results);
+        res.json({
+            results
+        });
     });
 });
 
@@ -41,7 +43,9 @@ app.get('/get_record/:id', (req, res) => {
         if (results.length === 0) {
             return res.status(404).json({ message: 'Record not found' });
         }
-        res.json(results[0]);
+        res.json({
+            results[0]
+        });
     });
 });
 
@@ -56,7 +60,9 @@ app.post('/add_record', (req, res) => {
         if (results.length === 0) {
             return res.status(401).json({ message: 'Error' });
         }
-        res.json({ message: 'success' });
+        res.json({ 
+            message: 'success' 
+        });
     });
 });
 
@@ -72,7 +78,9 @@ app.put('/update_record/:id', (req, res) => {
         if (results.length === 0) {
             return res.status(401).json({ message: 'Error' });
         }
-        res.json({ message: 'success' });
+        res.json({ 
+            message: 'success' 
+        });
     });
 });
 
@@ -87,7 +95,9 @@ app.delete('/delete_record/:id', (req, res) => {
         if (results.length === 0) {
             return res.status(404).json({ message: 'Record not found' });
         }
-        res.json({ message: 'success' });
+        res.json({ 
+            message: 'success' 
+        });
     });
 });
 //end
