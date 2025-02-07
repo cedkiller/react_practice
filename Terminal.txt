@@ -29,7 +29,7 @@ SERVER
 
 -create a folder name server
 -create a index.js file
--npm install node mysql express cors jsonwebtoken bcrypt nodemon
+-npm install node mysql pg express cors jsonwebtoken bcrypt nodemon
 
 AFTER INSTALLATION AND SETUP NOW SETUP ALL THE FILES
 
