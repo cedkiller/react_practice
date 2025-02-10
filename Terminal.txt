@@ -4,7 +4,7 @@ TERMINAL
 CLIENT
 
 OPEN INTEGRATED TERMINAL IN CLIENT
--npm install axios react-router-dom sweetalert2 jwt-decode
+-npm install axios react-router-dom sweetalert2 jwt-decode dotenv
 
 COPY THIS AND REPLACE THE CODE IN vite.config.js
 
@@ -29,7 +29,7 @@ SERVER
 
 -create a folder name server
 -create a index.js file
--npm install node mysql pg express cors jsonwebtoken bcrypt nodemon
+-npm install node mysql pg express cors jsonwebtoken bcrypt nodemon dotenv
 
 AFTER INSTALLATION AND SETUP NOW SETUP ALL THE FILES
 
