@@ -1,0 +1,74 @@
+import React, {useState, useEffect}  from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Style.css';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
+function Home () {
+    const navigate = useNavigate();
+    const [task, setTask] = useState("");
+    const [record, setRecord] = useState([]);
+
+    useEffect(() => {
+        getRecord();
+    },[])
+
+    const getRecord = async () => {
+        const response = await axios.get('http://localhost:5000/get_record');
+
+        setRecord(response.data);
+    }
+
+    const submit = async (e) => {
+        e.preventDefault();
+
+        const response = await axios.post('http://localhost:5000/add_record', { task });
+
+        if (response.data.message === "success")
+        {
+            Swal.fire({
+                title:'Task Added',
+                text:'The task has been added successfully',
+                icon:'success'
+            }).then((result) => {
+                if (result.isConfirmed)
+                {
+                    getRecord();
+                }
+            });
+        }
+    }
+    return (
+        <>
+        <br />
+        <div style={{display:'flex', justifyContent:'center'}}>
+            <div className='div'>
+                <form onSubmit={submit}>
+                    <div style={{display:'flex'}}>
+                        <input type="text" placeholder='Enter a task' className='form-control' value={task} onChange={(e) => setTask(e.target.value)} />
+                        <button className='btn btn-primary' style={{marginLeft:15}}>Enter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        <center>
+            <table className='table'>
+                <tr>
+                    <th style={{textAlign:'center', height:50, fontSize:20, backgroundColor:'black', color:'white'}}>Task</th>
+                    <th style={{textAlign:'center', height:50, fontSize:20, backgroundColor:'black', color:'white'}}>Action</th>
+                </tr>
+
+                {record.map((rec) => (
+                <tr key={rec.id}>
+                    <td style={{textAlign:'center', height:30, fontSize:17}}>{rec.task}</td>
+                    <td style={{textAlign:'center', height:30, fontSize:17}}><button className='btn btn-warning'>Edit</button> <button className='btn btn-danger'>Delete</button></td>
+                </tr>
+                ))}
+            </table>
+        </center>
+        </>
+    );
+}
+
+export default Home;
