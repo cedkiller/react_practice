@@ -4,7 +4,7 @@ TERMINAL
 CLIENT
 
 OPEN INTEGRATED TERMINAL IN CLIENT
--npm install axios react-router-dom sweetalert2 jwt-decode dotenv
+-npm install axios react-router-dom sweetalert2 jwt-decode bootstrap dotenv
 
 COPY THIS AND REPLACE THE CODE IN vite.config.js
 
@@ -24,6 +24,12 @@ export default defineConfig({
 
 AFTER REPLACE THE CODE OPEN INTEGRATED TERMINAL IN CLIENT 
 -npm install @vitejs/plugin-react --save-dev
+
+ADD THIS IMPORT IN APP.JS
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 SERVER
 
