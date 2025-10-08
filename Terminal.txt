@@ -1,3 +1,7 @@
+IF THE TEREMINAL IS ERROR NOT RECIEVING THE NPM PROMPT COPY AND PASTE THIS IN POWERSHELL (RUN AS ADMIN)
+
+- Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
 TERMINAL
 -npm create vite@latest
 
